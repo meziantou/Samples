@@ -1,2 +1,1 @@
-Samples
-=======
+http://blogs.softfluent.com/author/gba.aspx

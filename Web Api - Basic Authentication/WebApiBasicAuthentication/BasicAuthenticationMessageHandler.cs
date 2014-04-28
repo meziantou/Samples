@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Dispatcher;
 
-namespace WebApiBasicAuthentication
+namespace Meziantou.SimpleBlog.Web.Api
 {
-    public abstract class BasicAuthMessageHandler : DelegatingHandler
+    public abstract class BasicAuthenticationMessageHandler : DelegatingHandler
     {
         private const string BasicAuthResponseHeader = "WWW-Authenticate";
         private const string BasicAuthResponseHeaderValue = "Basic Realm=\"{0}\"";
 
-        protected BasicAuthMessageHandler()
+        protected BasicAuthenticationMessageHandler()
         {
         }
 
-        protected BasicAuthMessageHandler(HttpConfiguration httpConfiguration)
+        protected BasicAuthenticationMessageHandler(HttpConfiguration httpConfiguration)
         {
             InnerHandler = new HttpControllerDispatcher(httpConfiguration);
         }

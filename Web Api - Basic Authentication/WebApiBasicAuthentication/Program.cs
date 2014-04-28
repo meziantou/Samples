@@ -30,7 +30,7 @@ namespace WebApiBasicAuthentication
                     defaults: new { id = RouteParameter.Optional }
                 );
 
-                config.MessageHandlers.Add(new SampleBasicAuthMessageHandler());
+                config.MessageHandlers.Add(new SampleBasicAuthenticationMessageHandler());
 
                 app.UseWebApi(config);
             }

@@ -3,7 +3,7 @@ using System.Web.Security;
 
 namespace WebApiBasicAuthentication
 {
-    public class MemberBasicAuthMessageHandler : BasicAuthMessageHandler
+    public class MembershipBasicAuthenticationMessageHandler : BasicAuthenticationMessageHandler
     {
         protected override IPrincipal ValidateUser(string userName, string password)
         {
