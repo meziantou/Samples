@@ -1,10 +1,9 @@
 using System;
 using System.Security.Claims;
 using System.Security.Principal;
-using JetBrains.Annotations;
 using Microsoft.AspNet.Identity;
 
-namespace Meziantou.SimpleBlog.Web.Api
+namespace WebApiBasicAuthentication
 {
     public class IdentityBasicAuthenticationMessageHandler<TUser, TKey> : BasicAuthenticationMessageHandler
         where TUser : class, IUser<TKey>
@@ -17,7 +16,7 @@ namespace Meziantou.SimpleBlog.Web.Api
             get { return _userManager; }
         }
 
-        public IdentityBasicAuthenticationMessageHandler([NotNull] UserManager<TUser, TKey> userManager)
+        public IdentityBasicAuthenticationMessageHandler(UserManager<TUser, TKey> userManager)
         {
             if (userManager == null) throw new ArgumentNullException("userManager");
 
@@ -59,7 +58,7 @@ namespace Meziantou.SimpleBlog.Web.Api
 
     public class IdentityBasicAuthenticationMessageHandler<TUser> : IdentityBasicAuthenticationMessageHandler<TUser, string> where TUser : class, IUser<string>
     {
-        public IdentityBasicAuthenticationMessageHandler([NotNull] UserManager<TUser, string> userManager)
+        public IdentityBasicAuthenticationMessageHandler(UserManager<TUser, string> userManager)
             : base(userManager)
         {
         }
