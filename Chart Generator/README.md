@@ -1,0 +1,1 @@
+Generate charts as image using `C#`, `Google Chart` and `PhantomJS`
